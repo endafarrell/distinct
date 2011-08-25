@@ -1,0 +1,19 @@
+A simple Perl script to count the number of times
+individual keys lines have been seen.
+
+It's perl as I often use if on "bare bones" servers
+where there's little installed to count eg the
+number of different HTTP status codes returned as
+seen in the log files:
+
+    cat access.2011-08-24.log | \
+      awk '{print $9}' | \
+      distinct 
+    distinct-keys, occurances
+    200,107875
+    500,459
+    503,4790
+    
+
+The script is so simple that it's a doddle to 
+make it fit your own needs.
